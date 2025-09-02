@@ -25,14 +25,14 @@ def adicionar_paciente():
         return jsonify({"erro": "JSON inválido ou campo 'nome_paciente' ausente"}), 400
 
     novo_paciente = {
-        "nome_paciente": data.get("nome_paciente"),
-        "data_atendimento": data.get("data_atendimento"),  # formato: "YYYY-MM-DD"
-        "tempo_atendimento": data.get("tempo_atendimento"),
-        "idade_paciente": data.get("idade_paciente"),
-        "cid_paciente": data.get("cid_paciente"),
-        "valor_paciente": data.get("valor_paciente")
-    }
-
+    "nome_paciente": data.get("nome_paciente"),
+    "data_atendimento": data.get("data_atendimento"),  # formato: "YYYY-MM-DD"
+    "tempo_atendimento": data.get("tempo_atendimento"),
+    "idade_paciente": data.get("idade_paciente"),
+    "cid_paciente": data.get("cid_paciente"),
+    "palno_cov": data.get("palno_cov"),  # <-- ADICIONADO
+    "valor_paciente": data.get("valor_paciente")
+}
     resposta = supabase.table("paciente").insert(novo_paciente).execute()
 
     if resposta.data:

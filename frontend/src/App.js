@@ -8,6 +8,7 @@ function App() {
   const [data, setData] = useState("");
   const [cid, setCid] = useState("");
   const [valor_paciente, setValor_paciente] = useState("");
+  const [palnoCov, setPalnoCov] = useState(""); // camelCase no React
   const [tempo_atendimento, settempo_atendimento] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -23,6 +24,7 @@ function App() {
       idade_paciente: idade,
       data_atendimento: data,
       cid_paciente: cid,
+      palno_cov: palnoCov, // aqui converte para o nome do banco
       valor_paciente: valorNumerico.toFixed(2),
       tempo_atendimento: tempo_atendimento
     });
@@ -36,7 +38,8 @@ function App() {
           idade_paciente: idade,
           data_atendimento: data,
           cid_paciente: cid,
-          valor_paciente: valorNumerico.toFixed(2), // numérico puro
+          palno_cov: palnoCov, // nome do campo igual ao banco
+          valor_paciente: valorNumerico.toFixed(2),
           tempo_atendimento: tempo_atendimento
         }),
       });
@@ -55,6 +58,7 @@ function App() {
       setData("");
       setCid("");
       setValor_paciente("");
+      setPalnoCov("");
       settempo_atendimento("");
     } catch (error) {
       console.error("❌ Erro na requisição:", error);
@@ -78,6 +82,8 @@ function App() {
         setCid={setCid}
         valor_paciente={valor_paciente}
         setValor_paciente={setValor_paciente}
+        palnoCov={palnoCov}           // camelCase igual ao Formulario.jsx
+        setPalnoCov={setPalnoCov}     // camelCase igual ao Formulario.jsx
         tempo_atendimento={tempo_atendimento}
         settempo_atendimento={settempo_atendimento}
         loading={loading}
