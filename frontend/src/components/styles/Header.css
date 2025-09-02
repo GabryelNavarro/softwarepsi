@@ -1,35 +1,113 @@
-/* garante que body e html ocupem toda a tela */
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Header ocupa toda a largura e altura do viewport */
+/* Header ocupa largura total e se ajusta ao conteúdo */
 header {
   width: 100%;
-  height: 100vh; /* 100% da altura da tela */
-  overflow: hidden; /* evita scroll se a imagem for maior */
+  min-height: 35vh;
+  background-image: url('../Header/img/header.svg'); /* ajuste o caminho */
+  background-size: cover;   /* cobre toda a área */
+  background-position: center; /* centraliza */
+  background-repeat: no-repeat;
   display: flex;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.yasmin_completo{
+  display: none;
 }
 
+
+/* imagem de fundo cobre todo o header */
 .plano_fundo {
   width: 100%;
-  height: 30%;
-  object-fit: cover; /* mantém proporção e preenche o header */
-  display: block; /* remove espaço extra abaixo da imagem */
-}
-.yasmin__img {
-  position: absolute;
-  top: 13rem; /* <- Faz ela subir */
-  left: 8rem;
-  margin: 0; /* remove margens que empurram */
+  height: 100%;
+  object-fit: cover; /* cobre toda a área */
+  display: block;
 }
 
-.psi__plano{
-    position: absolute;
-    bottom: 45.5rem;
-    right: 16.5rem;
+
+/* Imagem principal (yasmin) responsiva */
+.yasmin__img {
+  max-width: 40%; /* ocupa até 40% da largura do header */
+  height: auto;
+  position: relative; /* remove o "absolute" fixo */
+  margin-top: 15rem;
+  margin-left: 8rem;
+  display: none;
+}
+
+/* Outra imagem decorativa */
+.psi__plano {
+  position: absolute; /* agora a posição é em relação ao header */
+  top: -2%;   /* distância do topo */
+  left: -4%;  /* distância da esquerda */
+  max-width: 50%; /* controla o tamanho */
+  height: auto;
+}
+/* ======= MEDIA QUERIES ======= */
+@media (max-width: 1024px) {
+  .yasmin__img {
+    max-width: 50%;
+    display: inline-block;
+
+  }
+  .psi__plano {
+    max-width: 20%;
+    bottom: 8%;
+    right: 5%;
+  }
+}
+
+
+@media (min-width: 1080px) {
+  .yasmin_completo {
+    max-width: 35%;
+    margin-left: 39rem;
+    margin-top: 38.2rem;
+    display: inline-block;
+   
+  }
+.header {
+  background-image: url("../Header/img/header.svg");
+  background-size: 102% auto; /* aumenta um pouco além do contain */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 100%;
+  height: 40rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.552);
+ 
+
+}
+
+body{
+  background-image: linear-gradient(to left,#3396AB,#282A3D);
+}
+
+  .psi__plano {
+    min-width:  10%;
+       margin-left:3rem;
+    margin-top: -0rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .yasmin__img {
+    max-width: 60%;
+    
+  }
+  .psi__plano {
+    max-width: 30%;
+    bottom: 5%;
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .yasmin__img {
+    max-width: 80%;
+  }
+  .psi__plano {
+    max-width: 36%;
+    bottom: 2%;
+    right: 3%;
+  }
 }
