@@ -1,0 +1,105 @@
+/* Formulario.css */
+@font-face {
+    font-family: Form;
+    src: url("../font/LuckiestGuy-Regular.ttf");
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 18.75rem;
+    margin: 1.25rem auto;
+    /* centraliza */
+    padding: 1.25rem;
+    border: 1px solid #2279A6;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    bottom: 35rem;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.412);
+}
+
+.form input {
+    padding: 0.65rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.87rem;
+}
+
+.form button {
+    padding: 0.63rem;
+    background-color: #4cafef;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+}
+
+.form button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: Form;
+    color: #2279A6;
+    letter-spacing: 0.18rem;
+}
+
+.botao_enviar {
+    font-family: Form;
+    letter-spacing: 0.18rem;
+    background-color: #2279A6 !important;
+}
+
+input::placeholder {
+    padding-left: 1rem;
+
+}
+
+.paciente::placeholder {
+    background: url("../Formulario/img/paciente.svg") no-repeat;
+    padding-top: 0.3rem;
+    padding-left: 2rem;
+}
+
+.idade::placeholder {
+    background: url("../Formulario/img/idade.svg") no-repeat;
+    padding-top: 0.3rem;
+    padding-left: 2rem;
+}
+
+.data {
+    background: url("../Formulario/img/calendario.svg") no-repeat right 16.5rem center;
+    text-align: left;
+    text-indent: 1rem;
+    /* desloca o texto */
+
+
+
+
+}
+
+.cid::placeholder {
+    background: url("../Formulario/img/cid.svg") no-repeat;
+    padding-top: 0.3rem;
+    padding-left: 2rem;
+
+}
+
+.money::placeholder{
+    background: url("../Formulario/img/money.svg") no-repeat;
+     padding-top: 0.3rem;
+    padding-left: 2rem;
+}
+
+.time::placeholder{
+    background: url("../Formulario/img/time.svg") no-repeat;
+     padding-top: 0.3rem;
+    padding-left: 2rem;
+}

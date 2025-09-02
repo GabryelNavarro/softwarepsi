@@ -1,0 +1,35 @@
+/* garante que body e html ocupem toda a tela */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header ocupa toda a largura e altura do viewport */
+header {
+  width: 100%;
+  height: 100vh; /* 100% da altura da tela */
+  overflow: hidden; /* evita scroll se a imagem for maior */
+  display: flex;
+  position: relative;
+}
+
+.plano_fundo {
+  width: 100%;
+  height: 30%;
+  object-fit: cover; /* mantém proporção e preenche o header */
+  display: block; /* remove espaço extra abaixo da imagem */
+}
+.yasmin__img {
+  position: absolute;
+  top: 13rem; /* <- Faz ela subir */
+  left: 8rem;
+  margin: 0; /* remove margens que empurram */
+}
+
+.psi__plano{
+    position: absolute;
+    bottom: 45.5rem;
+    right: 16.5rem;
+}
