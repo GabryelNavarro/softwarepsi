@@ -28,7 +28,7 @@ function App() {
     });
 
     try {
-      const response = await fetch("https://softwarepsi.vercel.app/paciente", {
+      const response = await fetch("https://softwarepsi-1.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
