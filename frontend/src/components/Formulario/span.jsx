@@ -21,7 +21,10 @@ function Formulario({
   const formatCurrency = (value) => {
     const numericValue = value.replace(/\D/g, ""); // Remove tudo que não é número
     const floatValue = parseFloat(numericValue) / 100;
-    if (isNaN(floatValue)) return "";
+    if (isNaN(floatValue)) {
+      setValor_paciente("");
+      return "";
+    }
     return floatValue.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",

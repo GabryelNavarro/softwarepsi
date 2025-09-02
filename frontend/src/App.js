@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header/header";
-import Formulario from "./components/Formulario/span";
+import Formulario from "./components/Formulario/span"; // ajuste o caminho conforme o nome real do arquivo
 
 function App() {
   const [nome, setNome] = useState("");
@@ -15,13 +15,15 @@ function App() {
     e.preventDefault();
     setLoading(true);
 
-    // Log para verificar se todos os dados estão corretos antes de enviar
+    // Converte "R$ 1.234,56" para número puro 1234.56
+    const valorNumerico = parseFloat(valor_paciente.replace(/\D/g, "")) / 100;
+
     console.log("📤 Enviando para backend:", {
       nome_paciente: nome,
       idade_paciente: idade,
       data_atendimento: data,
       cid_paciente: cid,
-      valor_paciente: valor_paciente,
+      valor_paciente: valorNumerico.toFixed(2),
       tempo_atendimento: tempo_atendimento
     });
 
@@ -34,7 +36,7 @@ function App() {
           idade_paciente: idade,
           data_atendimento: data,
           cid_paciente: cid,
-          valor_paciente: valor_paciente,
+          valor_paciente: valorNumerico.toFixed(2), // numérico puro
           tempo_atendimento: tempo_atendimento
         }),
       });
