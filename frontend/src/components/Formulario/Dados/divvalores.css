@@ -1,0 +1,36 @@
+@import url("../../Formulario/form.css");
+
+.divvalores{
+   
+    
+    background-image: linear-gradient(to left,#3396AB,#FCDFB9);
+    text-align: center;
+    border: 1px solid #FCDFB9;
+    margin-top: -24rem;
+    box-shadow: 4px 8px 8px rgb(255, 255, 255);
+    padding: 1rem;
+}
+
+.divvalores p{
+  font-family: Form;
+  letter-spacing: 2px;
+  color: #277282;
+ text-shadow: 1px 1px black;
+  font-weight: bold;
+  font-size: 18pt;
+    
+}
+
+.div_grid {
+  position: relative;
+  top: -450px;
+}
+
+.liquido{
+    color: #BB5E6C !important;
+}
+
+.divliq {
+    padding-top: 1rem;
+
+}

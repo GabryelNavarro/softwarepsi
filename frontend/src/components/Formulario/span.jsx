@@ -12,37 +12,33 @@ function Formulario({
   setValor_paciente,
   cid,
   setCid,
-  palnoCov,
-  setPalnoCov,
+  planoCov,
+  setPlanoCov,
   tempo_atendimento,
-  settempo_atendimento,
+  setTempo_atendimento,
   loading,
   handleSubmit
 }) {
   // Mapa de valores por plano
   const valoresPlano = {
-    cnu: 26.40,
-    amil: 40.0,
-    bluesaude: 45.0,
-    careplus: 50.0,
-    dtts: 50.0,
-    iter:30,
-    iter_b: 28.83,
-    metrus: 60.0,
-    seguro_u: 27.0,
-    sepaco: 25.0,
-    vivest: 63.37,
-
-
-
-
+    CNU: 26.40,
+    Amil: 40.0,
+    BlueSaude: 45.0,
+    CarePlus: 50.0,
+    DoutorDeTodos: 50.0,
+    Intermedica: 30.0,
+    IntermedicaBioSaude: 28.83,
+    Metrus: 60.0,
+    SeguroUnimed: 27.0,
+    Sepaco: 25.0,
+    Vivest: 63.37,
   };
 
   // Atualiza valor_paciente quando o plano muda
   useEffect(() => {
-    if (palnoCov && valoresPlano.hasOwnProperty(palnoCov)) {
+    if (planoCov && valoresPlano.hasOwnProperty(planoCov)) {
       setValor_paciente(
-        valoresPlano[palnoCov].toLocaleString("pt-BR", {
+        valoresPlano[planoCov].toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL"
         })
@@ -50,11 +46,11 @@ function Formulario({
     } else {
       setValor_paciente("");
     }
-  }, [palnoCov]);
+  }, [planoCov]);
 
   return (
     <form onSubmit={handleSubmit} className="form">
-      <h2>Prontuário</h2>
+      <h2>Finanças</h2>
 
       <input
         className="paciente"
@@ -67,22 +63,22 @@ function Formulario({
 
       <select
         className="plano-cov"
-        value={palnoCov}
-        onChange={(e) => setPalnoCov(e.target.value)}
+        value={planoCov}
+        onChange={(e) => setPlanoCov(e.target.value)}
         required
       >
         <option value="">Selecione o plano</option>
-        <option value="cnu">C N Unimed</option>
-        <option value="amil">AMIL</option>
-        <option value="bluesaude">Blue Saude</option>
-        <option value="careplus">Care Plus</option>
-        <option value="dtts">Doutor de Todos</option>
-        <option value="iter">Intermedica</option>
-        <option value="iter_b">Intermedica (Bio Saúde)</option>
-         <option value="metrus">Metrus (Bio Saúde)</option>
-          <option value="seguro_u">Seguro Unimed</option>
-          <option value="sepaco">Sepaco</option>
-          <option value="vivest">Vivest</option>
+        <option value="CNU">C N Unimed</option>
+        <option value="Amil">AMIL</option>
+        <option value="BlueSaude">Blue Saude</option>
+        <option value="CarePlus">Care Plus</option>
+        <option value="DoutorDeTodos">Doutor de Todos</option>
+        <option value="Intermedica">Intermedica</option>
+        <option value="IntermedicaBioSaude">Intermedica (Bio Saúde)</option>
+        <option value="Metrus">Metrus (Bio Saúde)</option>
+        <option value="SeguroUnimed">Seguro Unimed</option>
+        <option value="Sepaco">Sepaco</option>
+        <option value="Vivest">Vivest</option>
       </select>
 
       <input
@@ -111,7 +107,6 @@ function Formulario({
         required
       />
 
-      {/* Campo de valor apenas para visualização */}
       <input
         className="money"
         type="text"
@@ -120,12 +115,12 @@ function Formulario({
         readOnly
       />
 
-      <input 
+      <input
         className="time"
         type="number"
         placeholder="Tempo de Atendimento (minutos)"
         value={tempo_atendimento}
-        onChange={(e) => settempo_atendimento(e.target.value)}
+        onChange={(e) => setTempo_atendimento(e.target.value)}
         required
       />
 
