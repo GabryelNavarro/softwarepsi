@@ -36,7 +36,7 @@ function App() {
 
   async function buscarPacientes() {
     try {
-      const response = await fetch("https://softwarepsi-1.onrender.com/paciente");
+      const response = await fetch("http://localhost:5000/paciente");
       if (!response.ok) throw new Error("Erro ao buscar pacientes");
       const data = await response.json();
       setRows(data);
@@ -53,7 +53,7 @@ function App() {
     const valorNumerico = parseFloat(valor_paciente.replace(/\D/g, "")) / 100;
 
     try {
-      const response = await fetch("https://softwarepsi-1.onrender.com/paciente", {
+      const response = await fetch("http://localhost:5000/paciente", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -217,7 +217,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
         {/* Filtro de datas e botão de exportação */}
-      <div style={{ margin: "10px 0" }}>
+      <div className="div_pdf">
         <label>De: </label>
         <input
           type="date"

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
+import "../Dados/divvalores.css"
 
 export default function ListaPacientesAgGrid({ fetchRows }) {
   const [rowData, setRowData] = useState([]);
@@ -40,23 +41,24 @@ export default function ListaPacientesAgGrid({ fetchRows }) {
 
   return (
     <div>
-      <div className="ag-theme-alpine" style={{ height: 500 }}>
-        <AgGridReact
-          rowData={rowData}
-          columnDefs={columnDefs}
-          onGridReady={(params) => {
-            gridApiRef.current = params.api;
-            updateTotals();
-          }}
-          onFilterChanged={updateTotals}
-          onSortChanged={updateTotals}
-        />
-      </div>
+<div className="ag-theme-alpine tabela-scroll-y">
+  <AgGridReact
+    domLayout="normal"
+    rowData={rowData}
+    columnDefs={columnDefs}
+    onGridReady={(params) => {
+      gridApiRef.current = params.api;
+      updateTotals();
+    }}
+    onFilterChanged={updateTotals}
+    onSortChanged={updateTotals}
+  />
+</div>
 
-      <div style={{ marginTop: 16, fontWeight: 'bold' }}>
-        <p>Total de tempo de atendimento: {totalTempo} minutos</p>
-        <p>Total Bruto: {totalValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-      </div>
+<div style={{ marginTop: 16, fontWeight: 'bold' }}>
+  <p>Total de tempo de atendimento: {totalTempo} minutos</p>
+  <p>Total Bruto: {totalValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+</div>
     </div>
   );
 }

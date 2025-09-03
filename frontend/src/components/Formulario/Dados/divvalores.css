@@ -24,6 +24,8 @@
 .div_grid {
   position: relative;
   top: -450px;
+  max-width: 100%;
+
 }
 
 .liquido{
@@ -33,4 +35,70 @@
 .divliq {
     padding-top: 1rem;
 
+}
+.div_grid {
+  height: 400px; /* ou o valor que quiser */
+  width: 100%;
+}
+
+.div_grid .MuiDataGrid-root {
+  height: 100%;
+}
+
+.div_pdf label{
+  font-size: 1rem;
+  color: #3898AC;
+  font-weight: bold;
+  font-family: Form;
+  letter-spacing: 0.2rem;
+  padding-left: 1rem;
+  text-shadow: 2px 2px black;
+}
+
+.div_pdf input[type="date"] {
+  font-size: 1rem;
+  color: #277282;
+  font-family: Form;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 5px 10px;
+  border: 2px solid #3898AC;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* opcional: mudar cor da borda quando focado */
+.div_pdf input[type="date"]:focus {
+  outline: none;
+  border-color: #BB5E6C;
+  box-shadow: 0 0 5px rgba(187, 94, 108, 0.5);
+}
+
+
+.div_pdf button {
+  background-color: #3898AC;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Form;
+  letter-spacing: 0.1rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 3.2px;
+  text-shadow: 2px 2px black;
+}
+
+/* efeito ao passar o mouse */
+.div_pdf button:hover {
+  background-color: #277282;
+  transform: scale(1.05);
+}
+
+/* efeito ao clicar */
+.div_pdf button:active {
+  background-color: #1b4f5a;
+  transform: scale(0.98);
 }
