@@ -22,16 +22,18 @@ function Formulario({
   // Mapa de valores por plano
   const valoresPlano = {
     CNU: 26.40,
-    Amil: 40.0,
-    BlueSaude: 45.0,
-    CarePlus: 50.0,
-    DoutorDeTodos: 50.0,
-    Intermedica: 30.0,
+    Amil: 40.00,
+    BlueSaude: 45.00,
+    CarePlus: 50.00,
+    DoutorDeTodos: 50.00,
+    Intermedica: 30.00,
     IntermedicaBioSaude: 28.83,
-    Metrus: 60.0,
-    SeguroUnimed: 27.0,
-    Sepaco: 25.0,
+    Metrus: 60.00,
+    SeguroUnimed: 27.00,
+    Sepaco: 25.00,
     Vivest: 63.37,
+    ParticularSemanal: 90.00,
+    ParticularMensal: 75.00,
   };
 
   // Atualiza valor_paciente quando o plano muda
@@ -79,6 +81,8 @@ function Formulario({
         <option value="SeguroUnimed">Seguro Unimed</option>
         <option value="Sepaco">Sepaco</option>
         <option value="Vivest">Vivest</option>
+        <option value="ParticularSemanal">Particular Semanal</option>
+        <option value="ParticularMensal">Particular Mensal</option>
       </select>
 
       <input
